@@ -1,0 +1,44 @@
+name: Publish GitBook payload
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  unpack:
+    if: github.event.issue.title == '[automation] Publish GitBook payload'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out publication branch
+        uses: actions/checkout@v4
+        with:
+          ref: publish-gitbook
+          fetch-depth: 0
+
+      - name: Assemble and unpack the validated site
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat site.part.* > /tmp/gitbook.tar.xz
+          xz -t /tmp/gitbook.tar.xz
+          rm -rf book labs .gitbook.yaml
+          tar -xJf /tmp/gitbook.tar.xz -C .
+          rm -f site.part.*
+          rm -f .github/workflows/publish-gitbook.yml
+          rmdir .github/workflows 2>/dev/null || true
+          rmdir .github 2>/dev/null || true
+
+      - name: Commit the published GitBook
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- .gitbook.yaml README.md book labs
+          git add -u -- site.part.00 site.part.01 site.part.02 site.part.03 site.part.04 site.part.05 site.part.06 site.part.07 site.part.08 .github/workflows/publish-gitbook.yml
+          git commit -m "docs: publish Agent Coding UI design GitBook"
+          git push origin HEAD:publish-gitbook
