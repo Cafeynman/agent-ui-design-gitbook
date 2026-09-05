@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1220" height="760" viewBox="0 0 1220 760" role="img" aria-labelledby="title desc">
+<title id="title">界面状态矩阵</title>
+<desc id="desc">界面状态矩阵 的视觉示意图</desc>
+<defs>
+  <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#0B1020"/><stop offset="1" stop-color="#151B35"/></linearGradient>
+  <linearGradient id="accent" x1="0" x2="1"><stop stop-color="#7C8CFF"/><stop offset="1" stop-color="#54D2C6"/></linearGradient>
+  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#000" flood-opacity=".25"/></filter>
+</defs>
+<rect width="1220" height="760" rx="32" fill="url(#bg)"/>
+
+<text x="70" y="75" fill="#F7F8FF" font-size="42" font-family="Inter,Arial,sans-serif" font-weight="800">真实产品不是一张“正常状态”截图</text>
+<g transform="translate(70 125)" font-family="Inter,Arial,sans-serif" font-weight="700" font-size="20">
+  <g fill="#202A4D"><rect width="250" height="120" rx="20"/><rect x="275" width="250" height="120" rx="20"/><rect x="550" width="250" height="120" rx="20"/><rect x="825" width="250" height="120" rx="20"/></g>
+  <text x="125" y="68" text-anchor="middle" fill="#E9ECFF">Default</text><text x="400" y="68" text-anchor="middle" fill="#E9ECFF">Hover / Focus</text><text x="675" y="68" text-anchor="middle" fill="#E9ECFF">Loading</text><text x="950" y="68" text-anchor="middle" fill="#E9ECFF">Disabled</text>
+  <g transform="translate(0 150)" fill="#26335D"><rect width="250" height="120" rx="20"/><rect x="275" width="250" height="120" rx="20"/><rect x="550" width="250" height="120" rx="20"/><rect x="825" width="250" height="120" rx="20"/></g>
+  <text x="125" y="218" text-anchor="middle" fill="#E9ECFF">Empty</text><text x="400" y="218" text-anchor="middle" fill="#E9ECFF">Error</text><text x="675" y="218" text-anchor="middle" fill="#E9ECFF">Success</text><text x="950" y="218" text-anchor="middle" fill="#E9ECFF">Validation</text>
+  <g transform="translate(0 300)" fill="#334173"><rect width="250" height="120" rx="20"/><rect x="275" width="250" height="120" rx="20"/><rect x="550" width="250" height="120" rx="20"/><rect x="825" width="250" height="120" rx="20"/></g>
+  <text x="125" y="368" text-anchor="middle" fill="#F1F3FF">Permission denied</text><text x="400" y="368" text-anchor="middle" fill="#F1F3FF">Offline</text><text x="675" y="368" text-anchor="middle" fill="#F1F3FF">Confirmation</text><text x="950" y="368" text-anchor="middle" fill="#F1F3FF">Undo</text>
+  <rect x="230" y="465" width="620" height="90" rx="22" fill="url(#accent)"/>
+  <text x="540" y="520" text-anchor="middle" fill="#07111B" font-size="24">体验质量 = Happy Path + Edge Cases + Recovery</text>
+</g>
+
+</svg>

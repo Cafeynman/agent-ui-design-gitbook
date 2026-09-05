@@ -1,0 +1,68 @@
+name: Check and publish UI lessons
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: pip install -r requirements.txt playwright==1.55.0
+      - run: python -m playwright install --with-deps chromium
+      - run: python scripts/prepare_book.py && python scripts/build.py && python scripts/check.py
+      - run: python scripts/browser_check.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: browser-review
+          path: reviews/
+      - uses: actions/upload-pages-artifact@v4
+        if: github.ref == 'refs/heads/main'
+        with:
+          path: _site
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: check
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - uses: actions/deploy-pages@v4
+        id: deploy
+      - name: Verify public release marker
+        env:
+          SITE: ${{ steps.deploy.outputs.page_url }}
+        run: |
+          python - <<'PY'
+          import os,json,urllib.request,time
+          for attempt in range(8):
+              try:
+                  with urllib.request.urlopen(os.environ['SITE'].rstrip('/')+'/version.json?check='+os.environ['GITHUB_SHA'],timeout=20) as r: data=json.load(r)
+                  assert data['commit']==os.environ['GITHUB_SHA'], data
+                  assert data['edition']=='learn-by-doing-1', data
+                  print('Verified deployed commit',data['commit']);break
+              except Exception:
+                  if attempt==7:raise
+                  time.sleep(10)
+          PY

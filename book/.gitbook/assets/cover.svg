@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">Agent Coding 与 pen.dev 前端 UI 设计学习手册封面</title>
+<desc id="desc">Agent Coding 与 pen.dev 前端 UI 设计学习手册封面 的视觉示意图</desc>
+<defs>
+  <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#0B1020"/><stop offset="1" stop-color="#151B35"/></linearGradient>
+  <linearGradient id="accent" x1="0" x2="1"><stop stop-color="#7C8CFF"/><stop offset="1" stop-color="#54D2C6"/></linearGradient>
+  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#000" flood-opacity=".25"/></filter>
+</defs>
+<rect width="1600" height="900" rx="32" fill="url(#bg)"/>
+
+<circle cx="1320" cy="150" r="260" fill="#7C8CFF" opacity=".13"/>
+<circle cx="180" cy="760" r="300" fill="#54D2C6" opacity=".10"/>
+<text x="96" y="150" fill="#9DA8FF" font-size="30" font-family="Inter,Arial,sans-serif" font-weight="700" letter-spacing="3">AGENT CODING × PEN.DEV</text>
+<text x="96" y="280" fill="#F7F8FF" font-size="78" font-family="Inter,Arial,sans-serif" font-weight="800">前端 UI 设计学习手册</text>
+<text x="96" y="355" fill="#BCC4E2" font-size="30" font-family="Inter,Arial,sans-serif">不靠手写前端代码，也能定义、评审并交付专业界面</text>
+<g transform="translate(96 455)" filter="url(#shadow)">
+  <rect width="550" height="290" rx="24" fill="#F7F8FF"/>
+  <rect x="28" y="28" width="112" height="14" rx="7" fill="#151B35"/>
+  <rect x="400" y="24" width="52" height="22" rx="11" fill="#E5E8F5"/>
+  <rect x="462" y="24" width="60" height="22" rx="11" fill="#7C8CFF"/>
+  <rect x="28" y="85" width="310" height="22" rx="11" fill="#151B35"/>
+  <rect x="28" y="122" width="410" height="13" rx="7" fill="#AAB2CC"/>
+  <rect x="28" y="148" width="350" height="13" rx="7" fill="#C7CCDD"/>
+  <rect x="28" y="198" width="128" height="44" rx="12" fill="url(#accent)"/>
+  <rect x="174" y="198" width="104" height="44" rx="12" fill="#E9EBF4"/>
+  <rect x="370" y="86" width="152" height="156" rx="18" fill="#EEF0F7"/>
+  <path d="M394 200 C420 125,455 170,498 108" stroke="#7C8CFF" stroke-width="8" fill="none" stroke-linecap="round"/>
+</g>
+<g transform="translate(740 455)">
+  <rect width="760" height="290" rx="24" fill="#10162B" stroke="#2B355B"/>
+  <text x="36" y="58" fill="#7C8CFF" font-size="22" font-family="ui-monospace,monospace">Design brief</text>
+  <text x="36" y="103" fill="#F7F8FF" font-size="27" font-family="Inter,Arial,sans-serif" font-weight="700">用户 → 任务 → 结构 → 视觉 → 状态 → 代码</text>
+  <g transform="translate(36 145)">
+    <rect width="126" height="48" rx="14" fill="#202A4D"/><text x="63" y="31" text-anchor="middle" fill="#DCE1FF" font-size="18" font-family="Inter,Arial,sans-serif">观察</text>
+    <path d="M140 24h46" stroke="#59658D" stroke-width="3"/><path d="M180 17l10 7-10 7" fill="none" stroke="#59658D" stroke-width="3"/>
+    <rect x="202" width="126" height="48" rx="14" fill="#202A4D"/><text x="265" y="31" text-anchor="middle" fill="#DCE1FF" font-size="18" font-family="Inter,Arial,sans-serif">生成</text>
+    <path d="M342 24h46" stroke="#59658D" stroke-width="3"/><path d="M382 17l10 7-10 7" fill="none" stroke="#59658D" stroke-width="3"/>
+    <rect x="404" width="126" height="48" rx="14" fill="#202A4D"/><text x="467" y="31" text-anchor="middle" fill="#DCE1FF" font-size="18" font-family="Inter,Arial,sans-serif">评审</text>
+    <path d="M544 24h46" stroke="#59658D" stroke-width="3"/><path d="M584 17l10 7-10 7" fill="none" stroke="#59658D" stroke-width="3"/>
+    <rect x="606" width="126" height="48" rx="14" fill="url(#accent)"/><text x="669" y="31" text-anchor="middle" fill="#07111B" font-size="18" font-family="Inter,Arial,sans-serif" font-weight="800">交付</text>
+  </g>
+  <text x="36" y="250" fill="#98A3C7" font-size="19" font-family="Inter,Arial,sans-serif">8 周学习路径 · 168+ 术语 · 7 个交互实验 · 100 分验收量表</text>
+</g>
+
+</svg>

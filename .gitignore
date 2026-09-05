@@ -1,0 +1,5 @@
+_site/
+__pycache__/
+assets/catalog.js
+reviews/*.png
+reviews/*-results.json

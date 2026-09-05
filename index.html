@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="不背术语。点一下、看变化，再把一句话交给 Agent。零基础 UI 互动课。">
+<title>点一下，懂 UI · Agent UI Field Guide</title>
+<link rel="stylesheet" href="assets/style.css">
+<script defer src="assets/catalog.js"></script><script defer src="assets/lessons.js"></script><script defer src="assets/app.js"></script>
+</head>
+<body>
+<a class="skip" href="#lesson-title">跳到当前课程</a>
+<header class="top"><a class="brand" href="#lesson=hero"><span class="brand-icon" aria-hidden="true">◧</span> 点一下，懂 UI</a><nav aria-label="主导航"><a href="#lesson=hero" id="learn-link">互动课</a><a href="#dictionary" id="dictionary-link">查词</a><a href="guide/index.html">深入读</a></nav><button id="records" class="quiet">学习记录</button></header>
+<main>
+<section class="intro"><div><p class="eyebrow">给不写代码的你</p><h1>不背术语。<br class="mobile-only">先看它怎么变。</h1><p>每课只做一件事，再给 Agent 一句话。</p></div><div class="progress-wrap"><span id="progress-label">完成 0/12</span><progress id="progress" max="12" value="0" aria-label="已完成课程"></progress></div></section>
+<div id="learning" class="learning">
+<aside class="lesson-sidebar"><p class="small">从这里开始</p><ol id="lesson-list" aria-label="课程目录"></ol><p class="small">每课约 2 分钟。<br>先体验，再选一道题。</p></aside>
+<div class="mobile-picker"><label for="lesson-picker">选择课程</label><select id="lesson-picker"></select></div>
+<article class="lesson">
+<div class="lesson-heading"><div><p id="lesson-count" class="small"></p><h2 id="lesson-title" tabindex="-1"></h2><p id="lesson-def"></p></div><span id="lesson-en" class="term-label"></span></div>
+<div class="experiment"><div class="experiment-caption"><span id="try-instruction"></span><span class="small">虚构产品 · 仅作演示</span></div><div id="controls" class="controls"></div><div id="demo" class="demo"></div><p id="observation" class="observation" role="status">先操作上面的示例。</p></div>
+<div class="quiz"><h3 id="question"></h3><div id="answers" class="answers"></div><p id="feedback" class="feedback" role="status"></p></div>
+<details id="more"><summary>把它用在你的项目里</summary><p id="usage"></p><p id="caution"></p><p><a id="lesson-source" target="_blank" rel="noopener noreferrer">看官方解释 ↗</a></p></details>
+<div class="agent-brief"><div><h3>这样告诉 Agent</h3><p id="prompt"></p></div><button id="copy" class="quiet">复制指令</button></div>
+<div class="next-row"><p id="save-note" class="small">操作示例并答对，才会记为完成。</p><button id="next" class="primary">下一课</button></div>
+</article>
+</div>
+<section id="dictionary" hidden aria-labelledby="dict-title"><h2 id="dict-title">知道俗称，也能找到。</h2><label for="search">搜索中文或英文</label><input id="search" type="search" placeholder="试试：首屏、CTA、骨架屏" autocomplete="off"><div id="filters" class="filters"><label for="category">分类</label><select id="category"><option value="">全部</option></select><label class="check"><input type="checkbox" id="only-saved">只看收藏</label></div><p id="result-count" class="small" role="status"></p><div id="term-list"></div><div id="empty-search" hidden><p>没有找到。换个短词试试。</p><button id="clear-search" class="quiet">清空搜索和筛选</button></div></section>
+</main>
+<footer>原来的长篇资料仍在「深入读」。这里先学会看、选、说。<a href="https://github.com/Cafeynman/agent-ui-design-gitbook">项目源码 ↗</a></footer>
+<dialog id="term-dialog" aria-labelledby="term-title"><form method="dialog" class="dialog-head"><button class="quiet">关闭</button></form><h2 id="term-title" tabindex="-1"></h2><p id="term-definition"></p><h3>看 Agent 做得对不对</h3><p id="term-review"></p><a id="term-reading">读完整章节</a><p><button id="term-save" class="quiet">收藏</button></p></dialog>
+<dialog id="records-dialog" aria-labelledby="records-title"><form method="dialog" class="dialog-head"><button class="quiet">关闭</button></form><h2 id="records-title">学习记录</h2><p>只存在这台浏览器，不上传服务器。</p><p id="storage-warning" class="small"></p><button id="export" class="quiet">导出备份</button><label class="file-label" for="import-file">导入备份（最多 64 KB）</label><input id="import-file" type="file" accept=".json,application/json"><p id="import-status" role="status"></p><button id="confirm-import" class="primary" hidden>合并这些记录</button><p class="small">导入只合并有效课程与收藏，不覆盖已有进度。</p></dialog>
+<dialog id="demo-dialog" aria-labelledby="demo-dialog-title"><h2 id="demo-dialog-title">离开编辑？</h2><p>这是一个弹窗示例，没有真实数据。</p><form method="dialog" class="answers"><button class="primary" autofocus>继续编辑</button><button class="quiet">离开</button></form></dialog>
+<div id="notice" class="notice" role="status" hidden></div>
+<noscript><p>互动课需要启用 JavaScript。也可以<a href="guide/index.html">直接阅读图文书稿</a>。</p></noscript>
+</body></html>
